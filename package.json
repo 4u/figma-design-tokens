@@ -9,7 +9,8 @@
     "design-tokens": "dist/cli.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "start": "tsx src/cli.ts",
