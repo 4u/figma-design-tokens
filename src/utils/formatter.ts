@@ -1,4 +1,4 @@
-import type { ParsedVariables, Variable } from "./parser";
+import type { ParsedVariables, Variable } from "./parser.js";
 import { readFileSync } from "fs";
 
 function getVariableType(

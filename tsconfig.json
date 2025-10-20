@@ -1,24 +1,25 @@
 {
   "compilerOptions": {
-    // Target latest version of ECMAScript. Babel will take care of the rest.
-    "target": "esnext",
-    "module": "nodenext",
-    // Search under node_modules for non-relative imports.
-    "moduleResolution": "nodenext",
     // Process & infer types from .js files.
     "allowJs": true,
-    // Don't emit; allow Babel to transform files.
-    "noEmit": true,
-    // Enable strictest settings like strictNullChecks & noImplicitAny.
-    "strict": true,
+    // Enable emit for build
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "src",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     // Disallow features that require cross-file information for emit.
     "isolatedModules": true,
-    // Import non-ES modules as default imports.
-    "esModuleInterop": true,
     // Typed JSON imports
     "resolveJsonModule": true,
     // Some lints are running in the typescript folder for some reason
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "target": "ES2015",
+    "module": "Node16",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node16"
   },
   // Most ts-node options can be specified here using their programmatic names.
   "ts-node": {

@@ -1,20 +1,30 @@
 {
   "name": "design-tokens",
   "version": "1.0.0",
-  "main": "index.ts",
+  "type": "module",
+  "description": "CLI tool for processing Figma design tokens",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "design-tokens": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "start": "tsx src/index.ts"
+    "start": "tsx src/cli.ts",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@types/node": "^24.7.2",
+    "@types/yargs": "^17.0.33",
     "dotenv": "^17.2.3",
     "tsx": "^4.20.3",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "cmd-ts": "^0.14.3"
+    "yargs": "^18.0.0"
   }
 }

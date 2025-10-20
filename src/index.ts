@@ -3,23 +3,6 @@
 
 import "dotenv/config";
 
-import { command, run, positional, string } from "cmd-ts";
-import { ReadJsonFile } from "./args/ReadJsonFile";
-import { parse } from "./utils/parser";
-import { format } from "./utils/formatter";
-import { writeFileSync } from "node:fs";
-
-const app = command({
-  name: "design-tokens",
-  args: {
-    json: positional({ type: ReadJsonFile, displayName: "file" }),
-    output: positional({ type: string, displayName: "output" }),
-  },
-  handler: async ({ json, output }) => {
-    const dictionary = parse((json as any).collections, "Default");
-    writeFileSync(output, format(dictionary), "utf-8");
-  },
-});
-
-// parse arguments
-run(app, process.argv.slice(2));
+export { parse } from "./utils/parser.js";
+export { format } from "./utils/formatter.js";
+export { load } from "./utils/loader.js";
