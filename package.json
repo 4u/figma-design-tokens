@@ -13,18 +13,19 @@
   ],
   "scripts": {
     "start": "tsx src/cli.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "publixh": "tsc "
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^24.7.2",
     "@types/yargs": "^17.0.33",
-    "dotenv": "^17.2.3",
     "tsx": "^4.20.3",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "yargs": "^18.0.0"
   }
 }
