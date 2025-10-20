@@ -1,5 +1,9 @@
 import type { ParsedVariables, Variable } from "./parser.js";
 import { readFileSync } from "fs";
+import { resolve } from "path";
+
+const __dirname = new URL(".", import.meta.url).pathname;
+const repoDir = resolve(__dirname, "../../");
 
 function getVariableType(
   type: Variable["resolvedType"]
@@ -84,7 +88,10 @@ function buildExportLines(data: ParsedVariables) {
 }
 
 export function format(data: ParsedVariables): string {
-  const header = readFileSync("src/helpers/header.ts", "utf-8");
+  const header = readFileSync(
+    resolve(repoDir, "/src/helpers/header.ts"),
+    "utf-8"
+  );
   return `
 ${header}
 export const tokens = {${buildExportLines(data)}}

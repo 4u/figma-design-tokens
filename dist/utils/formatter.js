@@ -1,4 +1,7 @@
 import { readFileSync } from "fs";
+import { resolve } from "path";
+const __dirname = new URL(".", import.meta.url).pathname;
+const repoDir = resolve(__dirname, "../../");
 function getVariableType(type) {
     switch (type) {
         case "COLOR":
@@ -60,7 +63,7 @@ function buildExportLines(data) {
         "\n");
 }
 export function format(data) {
-    const header = readFileSync("src/helpers/header.ts", "utf-8");
+    const header = readFileSync(resolve(repoDir, "/src/helpers/header.ts"), "utf-8");
     return `
 ${header}
 export const tokens = {${buildExportLines(data)}}
